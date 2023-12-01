@@ -1,0 +1,59 @@
+====================================
+How to Utilize the say_my_name Function
+====================================
+
+This module introduces a function called ``say_my_name(first_name, last_name="")`` for printing names.
+
+Usage
+=====
+
+The function ``say_my_name(...)`` prints a formatted name based on the provided parameters.
+
+::
+
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+
+    >>> say_my_name("Alice")
+    My name is Alice
+
+Input Parameters
+================
+
+- ``first_name`` (str): The first name to be printed.
+- ``last_name`` (str, optional): The last name to be printed. Defaults to an empty string if not provided.
+
+Raises
+======
+
+The function raises a ``TypeError`` under the following circumstances:
+
+- If ``first_name`` is not a string.
+- If ``last_name`` is provided but not a string.
+
+::
+
+    >>> say_my_name(42, "Doe")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("John", 123)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+The function handles cases where both ``first_name`` and ``last_name`` are strings. If only one is provided, the function still executes successfully, printing the available name.
+
+::
+
+    >>> say_my_name("John")
+    My name is John
+
+    >>> say_my_name("", "Doe")
+    My name is Doe
+
+Note: Empty strings are ignored in constructing the full name. If both parameters are empty strings or not provided, the function prints "My name is" without any appended names.
+
+::
+
+    >>> say_my_name("", "")
+    My name is
