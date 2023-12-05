@@ -1,0 +1,81 @@
+# Module Docstring Check:
+>>> import my_list_module
+>>> len(my_list_module.__doc__) > 1
+True
+
+# Class Docstring Check:
+>>> my_list_class_doc = my_list_module.MyList.__doc__
+>>> len(my_list_class_doc) > 1
+True
+
+# Method Docstring Check:
+>>> my_list_method_doc = my_list_module.MyList.print_sorted.__doc__
+>>> len(my_list_method_doc) > 1
+True
+
+# Check MyList Inheritance from list:
+>>> issubclass(my_list_module.MyList, list)
+True
+
+# Check for Empty List:
+>>> empty_list = my_list_module.MyList()
+>>> empty_list.print_sorted()
+[]
+
+# Check Append Functionality:
+>>> list_to_append = my_list_module.MyList()
+>>> list_to_append.append(1)
+>>> list_to_append.append(2)
+>>> list_to_append.append(3)
+>>> list_to_append.append(4)
+>>> print(list_to_append)
+[1, 2, 3, 4]
+
+# Check List in Correct Order:
+>>> list_to_append.print_sorted()
+[1, 2, 3, 4]
+
+# Check Reversed Order List:
+>>> reversed_list = my_list_module.MyList()
+>>> reversed_list.append(4)
+>>> reversed_list.append(3)
+>>> reversed_list.append(2)
+>>> reversed_list.append(1)
+>>> print(reversed_list)
+[4, 3, 2, 1]
+>>> reversed_list.print_sorted()
+[1, 2, 3, 4]
+>>> print(reversed_list)
+[4, 3, 2, 1]
+
+# Check List with Negative Numbers:
+>>> negative_list = my_list_module.MyList()
+>>> negative_list.append(-1)
+>>> negative_list.append(5)
+>>> print(negative_list)
+[4, 3, 2, 1, -1, 5]
+>>> negative_list.print_sorted()
+[-1, 1, 2, 3, 4, 5]
+>>> print(negative_list)
+[4, 3, 2, 1, -1, 5]
+
+# Check All Negative Numbers:
+>>> all_negative_list = my_list_module.MyList()
+>>> all_negative_list.append(-10)
+>>> all_negative_list.append(-1)
+>>> all_negative_list.append(-7)
+>>> all_negative_list.append(-2)
+>>> all_negative_list.append(-8)
+>>> print(all_negative_list)
+[-10, -1, -7, -2, -8]
+>>> all_negative_list.print_sorted()
+[-10, -8, -7, -2, -1]
+>>> print(all_negative_list)
+[-10, -1, -7, -2, -8]
+
+# Check Too Many Arguments:
+>>> try:
+...     all_negative_list.print_sorted(1)
+... except TypeError as e:
+...     print(e)
+TypeError: print_sorted() takes 1 positional argument but 2 were given
