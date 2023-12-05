@@ -1,0 +1,36 @@
+Defines a BaseGeometry class called BaseGeometry.
+
+The BaseGeometry class is designed to serve as a foundation for geometric shapes, providing common functionality such as area calculation and integer validation.
+
+Class: BaseGeometry
+-------------------
+Represents the base geometry class.
+
+Methods:
+    - area(self): Method not yet implemented. Raises an Exception.
+    - integer_validator(self, name, value): Validates a parameter as an integer.
+        Args:
+            name (str): The name of the parameter.
+            value (int): The parameter to validate.
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than or equal to 0.
+
+Usage Example:
+--------------
+# Create an instance of BaseGeometry
+geometry_instance = BaseGeometry()
+
+# Attempt to call the area method (not yet implemented)
+try:
+    geometry_instance.area()
+except Exception as e:
+    print(e)  # Output: "area() is not implemented"
+
+# Validate an integer parameter
+try:
+    geometry_instance.integer_validator("side_length", 5)
+except TypeError as te:
+    print(te)  # Output: "side_length must be an integer"
+except ValueError as ve:
+    print(ve)  # Output: "side_length must be greater than 0"
