@@ -1,0 +1,3 @@
+-- create a table in a database.
+-- create the table force_name on my MySQL server.
+CREATE TABLE IF NOT EXISTS force_name (id INT, name VARCHAR(256) NOT NULL);
